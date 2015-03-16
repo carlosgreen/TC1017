@@ -1,0 +1,70 @@
+#include <iostream>
+#include <sstream>
+#include <stdio.h>
+#include "string.h"
+#include <algorithm>
+using namespace std;
+
+int main (){
+  int a, b, range, pal;
+  string answer;
+  int counter = 0;
+  cout <<"please enter a value ";
+  cin >> (a);
+  cout <<"please enter the upper value"<<endl;
+  cin >> (b);
+
+  range = (b-a);//range of numbers between the ones given by the user
+
+  cout <<"the range of the numbers given is  "<< range <<"  \n";
+
+
+   for (int i=a; i<=b; i++) {
+     ostringstream ostr; //output string stream
+     ostr << i; //use the string stream just like cout,
+     //except the stream prints not to stdout but to a string.
+     std::string textnumber = ostr.str();
+     string textnumber2 = textnumber;
+     reverse(textnumber.begin(),textnumber.end());
+      if (textnumber == textnumber2){
+        cout <<" this number is a palindrome!\n"<<textnumber<<endl;
+      }else {
+        cout <<"this number isnt a natural palindrome! \n"<<textnumber2<<endl;
+
+              //here is where the rest of the code needs to go
+                   string str = textnumber;
+                   std::stringstream s_str( str );//converts string to int value
+                   int r;//new int value asigned for str
+                   s_str >> r;//gives r the value of str in int
+
+                   int newpalindrome =(r + i);// sums the original digit with its inverse
+                   cout <<" "<<newpalindrome << " ";
+                   for (int i=a; i<=b; i++) {
+                     ostringstream ostr; //output string stream
+                     ostr << newpalindrome; //use the string stream just like cout,
+                     //except the stream prints not to stdout but to a string.
+                     std::string newpalindrome1 = ostr.str();//creates the string variable that will include the value
+                     //                                        of "newpalindrome"
+                     string newpalindrome2 = newpalindrome1;// saves the original text to be able to compare both
+                     reverse(newpalindrome1.begin(),newpalindrome1.end());
+                      if (newpalindrome1 == newpalindrome2){
+                        cout <<" this number became a palindrome due to the sum of the original nonpalindrome with its inverse!\n"<<newpalindrome1<<endl;
+
+
+                    }
+                    else {
+                      cout <<"sorry, this number is a natural lycherel"<<newpalindrome1 <<endl;
+                    }
+                    counter = counter + 1;
+                  }while (counter < 1);
+                  }
+
+
+
+             }
+
+
+
+
+             return 0;
+        }
