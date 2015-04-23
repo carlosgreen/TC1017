@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int findThrees(int array[], int size){
+  int divi;
+  int good=0;
+  int no;
+  for (int i=0; i<size; i++){
+    cout<<"give me a number: "<<endl;
+    cin>>array[i];
+
+  }
+  for(int i=0; i<size; i++){
+    divi = array[i]%3;
+    if (divi==0){
+      good=good+array[i];
+    }else{
+
+    }
+  }
+cout<<"the sum of the numbers that could be divided by 3 is: "<<good<<endl;
+}
+int main(){
+  int size;
+  int array[size];
+  cout<<"how many numbers are you going to enter? "<<endl;
+  cin>>size;
+  findThrees(array, size);
+
+}
