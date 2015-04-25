@@ -20,6 +20,7 @@ int findThrees(int array[], int size){
   }
 cout<<"the sum of the numbers that could be divided by 3 is: "<<good<<endl;
 }
+
 int main(){
   int size;
   int array[size];
