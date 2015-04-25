@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+double dotProduct (int firstv[], int secondv[]){
+
+double multi, product=0;
+  for(int i=1 ; i < 6; i++){
+  multi=firstv[i]*secondv[i];
+  product= product + multi;
+  }
+return product;
+}
+
+int main (){
+
+int num, array[3], array2[3];
+for(int i=1; i<3; i++){
+cout<<"give me number "<<i<<" from first vector: "<<endl;
+cin>> num;
+array[i]=num;
+}
+for(int i=1; i<3; i++){
+cout<<"give me number "<<i<<" from second vector"<<endl;
+cin>> num;
+array2[i]=num;
+}
+
+cout<<"dot product: "<<dotProduct(array, array2)<<endl;
+
+return 0;
+}
